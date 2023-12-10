@@ -31,10 +31,6 @@ app = Flask("yt")
 def help():
     return render_template('help.html')
 
-@app.route("/<name>")
-def index(name):
-    return escape(name)
-
 @app.route('/data')
 def datafinder():
     link = request.args.get('link')
