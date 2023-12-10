@@ -1,0 +1,5 @@
+beautifulsoup4==4.10.0
+jsonlib==1.6.1  
+requests==2.26.0
+ffmpeg-python==0.2.0
+regex==2021.12.20  
