@@ -47,3 +47,18 @@ def datafinder():
     
 
 
+
+def runner():
+     app.run(host="0.0.0.0",port=2341)
+
+def starter():
+     fire = Thread(target=runner)
+     fire.start()
+
+starter()
+
+
+
+
+
+
