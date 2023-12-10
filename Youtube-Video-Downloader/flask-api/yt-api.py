@@ -44,6 +44,16 @@ def datafinder():
         return jsondataloader(mc)
     else:
          return jsondataloader(finaldataload)
-    
+
+
+def run():
+    app.run(host="0.0.0.0",port=2341)
+
+def starter():
+    start = Thread(target=run)
+    start.start()
+
+
+starter()
 
 
