@@ -42,18 +42,15 @@ def downloader(linker):
     filer.write(mc)
     filer.close()
 
-    # Read your HTML file
     with open("src.html", "r", encoding="utf-8") as file:
         html_content = file.read()
 
-    # Use regex to find the line containing "ytInitialPlayerResponse" and extract the JSON data
     pattern = re.compile(r'ytInitialPlayerResponse = ({.*?});', re.DOTALL)
     match = pattern.search(html_content)
 
     if match:
         json_data = match.group(1)
 
-        # Now, you have the JSON data
         fc = json.loads(json_data)["streamingData"]["adaptiveFormats"]
         for i in range(len(fc)):
             if "qualityLabel" in str(fc[i]):
