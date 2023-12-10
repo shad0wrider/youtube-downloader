@@ -4,6 +4,10 @@ import ffmpeg as fpeg
 
 vf = {}
 
+print("===================================")
+print("//Made with ❤️ by @ElectronPro")
+print("===================================")
+
 link = input("Enter youtube link: ")
 
 namer = str(link.split("v=")[1])
