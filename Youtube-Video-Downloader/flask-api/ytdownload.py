@@ -8,7 +8,10 @@ import random
 import secrets
 
 
-randomuid = str(secrets.token_hex(12))
+def newuuid():
+  randomuid = str(secrets.token_hex(12))
+  return str(randomuid)
+
 
 headers = {
 
@@ -74,9 +77,9 @@ def downloader(linker):
 
 
             
-            
-        open(f"{randomuid}data{videoid}.json","w").write(json.dumps(info))
-        sendpath = os.path.abspath(f"{randomuid}data{videoid}.json")
+        saveuuid = newuuid()
+        open(f"{saveuuid}data{videoid}.json","w").write(json.dumps(info))
+        sendpath = os.path.abspath(f"{saveuuid}data{videoid}.json")
         return sendpath
     else:
         print("Pattern not found in the HTML file.")
