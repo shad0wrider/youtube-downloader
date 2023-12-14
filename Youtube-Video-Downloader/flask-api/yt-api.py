@@ -35,15 +35,18 @@ def help():
 def datafinder():
     link = request.args.get('link')
     idval = str(link.split("v=")[1])
-    if len(idval) > 11:
+    if len(idval) != 11:
          return "The video ID is not valid :("
-     
-    finaldataload = finder(idval)
-    if finaldataload == False:
-        mc =  ytloader.downloader(link)
-        return jsondataloader(mc)
+
+    
     else:
-         return jsondataloader(finaldataload)
+        
+        finaldataload = finder(idval)
+        if finaldataload == False:
+            mc =  ytloader.downloader(link)
+            return jsondataloader(mc)
+        else:
+             return jsondataloader(finaldataload)
     
 
 def runner():
